@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_AUTOINCLUDE</name>
+	<author>Brandon J. Yaniz</author>
+	<creationDate>January 2022</creationDate>
+	<copyright>Copyright (C) 2022 The Adept Traveler, Inc. All rights reserved.</copyright>
+	<license>BSD 3 Clause; see LICENSE.txt</license>
+	<authorEmail>joomla@adept.travel</authorEmail>
+	<authorUrl>adept.travel</authorUrl>
+	<version>1.1.0</version>
+	<description>PLG_SYSTEM_AUTOINCLUDE_DESC</description>
+
+	<namespace path="src"></namespace>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_system_autoinclude.ini</language>
+		<language tag="en-GB">language/en-GB/plg_system_autoinclude.sys.ini</language>
+	</languages>
+
+	<media folder="media" destination="plg_system_autoinclude">
+    <folder>css</folder>
+    <folder>webfonts</folder>
+    <filename>index.html</filename>
+	</media>
+
+  <files>
+    <folder>language</folder>
+    <filename plugin="autoinclude">autoinclude.php</filename>
+    <filename plugin="autoinclude">autoinclude.xml</filename>
+		<filename>index.html</filename>
+	</files>
+
+  <config>
+    <fields name="params">
+			<fieldset name="basic" label="PLG_SYSTEM_AUTOINCLUDE_TAB_BASIC">
+        <field
+					name="mode"
+					type="list"
+					default="development"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_MODE_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_MODE_DESC">
+
+					<option value="production">PLG_SYSTEM_AUTOINCLUDE_OPTION_PRODUCTION</option>
+					<option value="development">PLG_SYSTEM_AUTOINCLUDE_OPTION_DEVELOPMENT</option>
+				</field>
+
+				<field
+					name="css_include"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_CSS_INCLUDE_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_CSS_INCLUDE_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="css_include_editor"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_CSS_INCLUDE_EDITOR_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_CSS_INCLUDE_EDITOR_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="js_include"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_JS_INCLUDE_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_JS_INCLUDE_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+
+				<field
+					name="google_font"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_GOOGLE_FONT_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_GOOGLE_FONT_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="google_font_url"
+					type="text"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_GOOGLE_FONT_URL_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_GOOGLE_FONT_URL_DESC"
+					showon="google_font:1"/>
+
+				<field
+					name="fontawesome"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_FONTAWESOME_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_FONTAWESOME_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="fontawesome_location"
+					type="list"
+					default="joomla"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_FONTAWESOME_LOCATION_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_FONTAWESOME_LOCATION_DESC"
+					showon="fontawesome:1">
+
+					<option value="joomla">PLG_SYSTEM_AUTOINCLUDE_OPTION_JOOMLA</option>
+					<option value="cdn">PLG_SYSTEM_AUTOINCLUDE_OPTION_CDN</option>
+					<option value="local">PLG_SYSTEM_AUTOINCLUDE_OPTION_LOCAL</option>
+				</field>
+			</fieldset>
+			<!--
+			<fieldset name="cache" label="PLG_SYSTEM_AUTOINCLUDE_TAB_CACHE">
+        <field
+					name="cache"
+					type="list"
+					default="0"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_CACHE_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_CACHE_DESC">
+
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					default="15"
+					label="PLG_SYSTEM_AUTOINCLUDE_FIELD_CACHE_TIME_LABEL"
+					description="PLG_SYSTEM_AUTOINCLUDE_FIELD_CACHE_TIME_DESC"
+					min="1"
+					max="1440"
+					step="5" />
+				</fieldset>
+			-->
+    </fields>
+  </config>
+</extension>
